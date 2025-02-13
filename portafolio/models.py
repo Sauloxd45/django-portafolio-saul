@@ -1,10 +1,12 @@
 from django.db import models
+from django.db.models.fields import CharField, DateTimeField, TextField, URLField
+from django.db.models.fields.files import ImageField
 
 
 class Project(models.Model):
     title = models.CharField(max_length=200, verbose_name="Título")
     description = models.TextField(verbose_name="Descripción")
-    image = models.ImageField(verbose_name="Imagen",upload_to='portafolio/images/')
+    image = ImageField(verbose_name="Imagen",upload_to="portafolio/images/")
     link = models.URLField(null=True, blank=True, verbose_name="Dirección web")
     created = models.DateTimeField(
         auto_now_add=True, verbose_name="Fecha de creación")
@@ -18,4 +20,4 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-# Create your models here.
+# Create your models here.......
