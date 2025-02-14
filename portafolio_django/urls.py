@@ -23,5 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-
-""" prueba """
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+    """ ya ya dejar de mamadas y pon el path de la app """
