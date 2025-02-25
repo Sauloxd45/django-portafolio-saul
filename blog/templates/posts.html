@@ -1,1 +1,10 @@
-<h1>pots</h1>
+<h1>posts</h1>  
+{% for post in posts %}
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.text|striptags|truncatechars_html:200 }}</p>
+  <p>{{post.date|date:'M d Y'}}</p>
+  <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% comment %} <a href="{% url 'blog:post_detail' post_detail %}">{{post.title}}</a>  {% endcomment %}
+    <a href="{% url 'blog:post_detail' post.id %}">{{post.title}}</a>
+{% endfor %}
+
