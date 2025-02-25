@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
 <h1>posts</h1>  
 {% for post in posts %}
   <h2>{{ post.title }}</h2>
@@ -8,3 +10,5 @@
     <a href="{% url 'blog:post_detail' post.id %}">{{post.title}}</a>
 {% endfor %}
 
+
+{% endblock %}

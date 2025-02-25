@@ -1,0 +1,89 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== SWIPER CSS ===== -->
+        <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+        
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+        <title>Portfolio Personal Complete</title>
+    </head>
+    <body>
+        <!--===== SCROLL TOP =====-->
+        <a href="#" class="scrolltop show-scroll" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+        
+        <!--===== HEADER =====-->
+        <header class="l-header " id="header">
+            <nav class="nav bd-container">
+                <a href="#" class="nav__logo">Saul Gonzalez Rosado</a>
+                
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="#portafolio" class="nav__link">Portafolio</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact Me</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <div class="footer__container bd-container">
+                <h1 class="footer__title"> Gonzalez Rosado Saul</h1>
+                <p class="footer__description"> I am saul and this is my personal website,consult me here.</p>
+                <div class="footer__social">
+                    <a href="https://www.linkedin.com/in/saul-gonzalez-rosado-702518216/" class="footer__link"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/Sauloxd45" class="footer__link"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.youtube.com/@sauloxd4517/videos" class="footer__link"><i class='bx bxl-youtube'></i></a>
+
+                </div>
+           
+                <p class="footer__copy">&#169;  Mexico.All right reserved</p>
+            </div>
+        </footer>
+        
+        <!-- ===== MIXITUP FILTER ===== -->
+        <script src="{% static 'js/mixitup.min.js' %}"></script>
+        
+        <!-- ===== SWIPER JS ===== -->
+        <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+        
+        <!-- ===== GSAP ===== -->
+        <script src="{% static 'js/gsap.min.js' %}"></script>
+        
+        <!-- ===== EMAILJS ===== -->
+        <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('JDa9NMbnIrQ9xzlpx')
+</script>
+        
+        <!--===== MAIN JS =====-->
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

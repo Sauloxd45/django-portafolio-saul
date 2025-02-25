@@ -128,7 +128,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 MEDIA_URL = '/public/'
 
+# STATICFILES_DIRS = [
+#     (BASE_DIR, 'static'),  # Asegúrate de que la carpeta "static" esté incluida
+# ]
 
+# STATIC_ROOT = (BASE_DIR, 'staticfiles')  # Para producción
 
 
 

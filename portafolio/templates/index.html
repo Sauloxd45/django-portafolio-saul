@@ -1,48 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'layout.html' %}
 
-        <!-- ===== SWIPER CSS ===== -->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        
-        <!-- ===== BOX ICONS ===== -->
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-        <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="assets/css/styles.css">
-
-        <title>Portfolio Personal Complete</title>
-    </head>
-    <body>
-        <!--===== SCROLL TOP =====-->
-        <a href="#" class="scrolltop show-scroll" id="scroll-top">
-            <i class='bx bx-chevron-up scrolltop__icon'></i>
-        </a>
-        
-        <!--===== HEADER =====-->
-        <header class="l-header " id="header">
-            <nav class="nav bd-container">
-                <a href="#" class="nav__logo">Saul Gonzalez Rosado</a>
-                
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-                        <li class="nav__item"><a href="#portafolio" class="nav__link">Portafolio</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact Me</a></li>
-                    </ul>
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
-
-        <main class="l-main">
+{% block content %}
+{% load static %}
             <!--===== HOME =====-->
             <section class="home" id="home">
                 <div class="home__container bd-container bd-grid">
@@ -52,7 +11,7 @@
                         </span>
                         <h1 class="home__name">Saul Gonzalez </h1>
                         <span class="home__profession">Mecatronic Enginner</span>
-                        <a download="" href="assets/pdf/CV hasta traylfer.pdf" class="button button-light home__button"> Donwload CV</a>
+                        <a download="" href="{% static 'pdf/CV_hasta_traylfer.pdf' %}" class="button button-light home__button" target="_blank"> Donwload CV</a>
 
                     </div>
 
@@ -64,7 +23,7 @@
                     </div>
 
                     <div class="home__img">
-                        <img src="assets/img/home.jpg" alt="">
+                        <img src="{% static 'img/home.jpg' %}" alt="">
                     </div>
 
                 </div>
@@ -94,7 +53,7 @@
                                 <span class="about__achivement">Best work awards</span>
                             </div> -->
 
-                            <img src="assets/img/about.jpg" alt="" class="about__img">
+                            <img src="{%static 'img/about.jpg'%}" alt="" class="about__img">
                     </div>
                 </div>
             </section>
@@ -342,6 +301,7 @@
                 </div>
             </section>
             <!--===== PORTFOLIO =====-->
+            {% comment %} {% include 'blog/post.html' %} {% endcomment %}
             <section class="Portafolio section bd-container" id="portafolio">
                 <span class="section-subtitle">My recent Works</span>
                 <h2 class="section-title">Portafolio </h2>
@@ -373,7 +333,7 @@
                     {% endfor %}
 
                     
-                    
+{% comment %}                     
                     <div class="portafolio__content mix web">
                         <a href="#"> <img src="assets/img/work1.jpg" alt="" class="portafolio__img"></a>
                         <div class="portafolio__data">
@@ -444,7 +404,7 @@
                             <a href="#" class="button button-link">View details.</a>
 
                         </div>
-                    </div>
+                    </div> {% endcomment %}
 
 
                 </div>
@@ -459,7 +419,7 @@
                 <div class="testimonial__container swiper-container">
                 <div class="swiper-wrapper">   
                     <div class="testimonial__content swiper-slide">
-                        <img src="assets/img/testimonial1.jpg" alt="" class="testimonial__img">
+                        <img src="{% static "img/testimonial1.jpg" %}" alt="" class="testimonial__img">
                         <h3 class="testimonial__title">Dr. José Alfredo Carazo Luna </h3>
                         <span class="testimonial__client">Research professor University Technology of Mixteca </span>
                         <p class="testimonial__description">es una persona honesta, trabajadora y disciplinada en todas sus tareas y no dudo que pondrá todo su empeño y entusiasmo en las actividades que se le encomienden. Por lo que le sugiero considere esta recomendación con la confianza de que estará a la altura de sus responsabilidades </p>
@@ -467,7 +427,7 @@
                     </div>
 
                     <div class="testimonial__content swiper-slide">
-                        <img src="assets/img/testimonial2.jpg" alt="" class="testimonial__img">
+                        <img src="{% static "img/testimonial2.jpg" %}" alt="" class="testimonial__img">
                         <h3 class="testimonial__title">Ing. Jessica del Carmen Mireles Lopez</h3>
                         <span class="testimonial__client">After-sales Supervisor Southern Zone Piaggio Brand</span>
                         <p class="testimonial__description">"Trabajar con Saúl en el desarrollo del sistema de activación de garantías para la marca Piaggio fue una experiencia muy positiva. Su enfoque innovador y habilidades en desarrollo de software marcaron la diferencia en cada etapa del proyecto. Saúl no solo aportó soluciones técnicas de gran calidad, sino que también mostró una excelente capacidad para trabajar en equipo y resolver problemas con rapidez. Gracias a su liderazgo y conocimientos, logramos crear un sistema que mejoró significativamente el proceso de activación de garantías, beneficiando tanto a los usuarios como a la empresa. Sin duda, recomiendo a Saúl como un profesional confiable, talentoso y orientado a resultados."</p>
@@ -475,7 +435,7 @@
                     </div>
 
                     <div class="testimonial__content swiper-slide">
-                        <img src="assets/img/testimonial3.jpg" alt="" class="testimonial__img">
+                        <img src="{% static "img/testimonial3.jpg" %}" alt="" class="testimonial__img">
                         <h3 class="testimonial__title">Ing. Olin Adriana Velásquez Chávez</h3>
                         <span class="testimonial__client">Integration Engineer - Ericcson Brand </span>
                         <p class="testimonial__description">es mi privilegio recomendar a el Ing. Saul Gonzalez Rosado, a quien tengo el honor de conocer desde hace 10 años, de quién puedo dar fe que es una excelente ciudadano, honesto, responsable, solidario y trabajador. Así mismo, puedo confirmar sus altos valores éticos, que ha reflejado en su actuar.  Por estas razones, la recomiendo para cualquier responsabilidad que se le sea asignada. </p>
@@ -493,107 +453,5 @@
 
     </section>
 
-            <!--===== CONTACTME =====-->
-                <section class="contact section bd-container" id="contact">
-                <span class="section-subtitle">For projects</span>
-                <h2 class="section-title">Contact me </h2>
-
-                    <div class="contact__container bd-grid">
-                        <div class="contact__content bd-grid">
-                            <div class="contact__box">
-                                <i class='bx bx-home contact__icon' ></i>
-                                <h3 class="contact__title">Location</h3>
-                                <span class="contact__description"> Oaxaca de Juarez, Oax Mexico</span>
-                            </div>
-
-                            <div class="contact__box">
-                                <i class='bx bx-phone contact__icon' ></i>
-                                <h3 class="contact__title">Phone</h3>
-                                <span class="contact__description"> +52 951 194 1021</span>
-                            </div>
-
-                            <div class="contact__box">
-                                <i class='bx bx-envelope contact__icon' ></i>
-                                <h3 class="contact__title">Mail</h3>
-                                <span class="contact__description">sauloxd45@hotmail.com</span>
-                            </div>
-                            
-                            <div class="contact__box">
-                                <i class='bx bx-chat contact__icon' ></i>
-                                <h3 class="contact__title">Chat</h3>
-                                <div>
-                                    <a href=" https://Wa.me/529511941021" class="contact__social"><i class='bx bxl-whatsapp' ></i> </a>
-                                    <a href="https://t.me/+529511941021" class="contact__social"><i class='bx bxl-telegram' ></i> </a>
-                                    <a href="https://www.facebook.com/sauloxd.goonz/?locale=es_LA" class="contact__social"><i class='bx bxl-messenger' ></i> </a>
-
-                                </div>
-                            </div>
-
-                        </div>
-                 
-                                <form action="" class="contact__form" id="form">
-                                  <div class="contact__inputs">
-                                    <input type="text" name="from_name" placeholder="Name" class="contact__input" id="from_name">
-                                    <input type="email" name="Email_id" placeholder="Email" class="contact__input" id="Email_id">
-                                  </div>
-                              
-                                  <div class="contact__inputs">
-                                    <input type="text" name="from_project" placeholder="Project" class="contact__input" id="from_project">
-                                    <input type="text"name="Phone_number"placeholder="Number" class="contact__input" id="Phone_number">
-                                  </div>
-                              
-                                  <textarea 
-                                    name="message" 
-                                    id="message" 
-                                    cols="30" 
-                                    rows="7" 
-                                    placeholder="Message" 
-                                    class="contact__input"
-                                  ></textarea>
-                              
-                                  <input type="submit" value="Send Message" class="button contact__button" id="button">
-                                </form>
-                             
-
-                </section>
-        </main>
-
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <div class="footer__container bd-container">
-                <h1 class="footer__title"> Gonzalez Rosado Saul</h1>
-                <p class="footer__description"> I am saul and this is my personal website,consult me here.</p>
-                <div class="footer__social">
-                    <a href="https://www.linkedin.com/in/saul-gonzalez-rosado-702518216/" class="footer__link"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://github.com/Sauloxd45" class="footer__link"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.youtube.com/@sauloxd4517/videos" class="footer__link"><i class='bx bxl-youtube'></i></a>
-
-                </div>
-           
-                <p class="footer__copy">&#169;  Mexico.All right reserved</p>
-            </div>
-
-
-        </footer>
-        
-        <!-- ===== MIXITUP FILTER ===== -->
-        <script src="assets/js/mixitup.min.js"></script>
-        
-        <!-- ===== SWIPER JS ===== -->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        
-        <!-- ===== GSAP ===== -->
-        <script src="assets/js/gsap.min.js"></script>
-        
-        <!-- ===== EMAILJS ===== -->
-        <script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
-  emailjs.init('JDa9NMbnIrQ9xzlpx')
-</script>
-        
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
-    </body>
-</html>
+  <!--===== CONTACTME =====-->
+{% endblock %}
