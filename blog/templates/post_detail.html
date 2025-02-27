@@ -1,10 +1,29 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Post: {{post}}</h1>
-<h2>{{ post.title }}</h2>
-<p>{{post.date|date:'M d Y'}}</p>
-<p>{{ post.text |safe}}</p>
-<img src="{{ post.image.url }}" alt="{{ post.title }}">
+.
+<div class="text-center p-3">
+
+    <h2>{{post}}</h2>
+
+<h3 class="my-2 h5 text-muted">{{ post.date |date:'M d Y'}}</h3>
+
+<div class="d-flex justify-content-center">
+
+    <div class="img-fluid w-auto">
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    
+    </div>
+    
+
+</div>
+
+<div class="my-4">
+    <p>{{ post.text |safe}}</p>
+</div>
+
+<div class="my-4">
+    <a href="{% url 'blog:posts' %}" class="btn btn-light">Back to posts</a>
+</div>
 
 {% endblock %}
