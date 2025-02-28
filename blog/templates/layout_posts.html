@@ -33,15 +33,14 @@
         <!--===== HEADER =====-->
         <header class="l-header " id="header">
             <nav class="nav bd-container">
-                <a href=""{% url 'home' %}"" class="nav__logo">Saul Gonzalez Rosado</a>
+                <a href="{% url 'home' %}" class="nav__logo">Saul Gonzalez Rosado</a>
                 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="{% url 'home' %}" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
-                        <li class="nav__item"><a href="#portafolio" class="nav__link">Portafolio</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact Me</a></li>
+                        <li class="nav__item d-flex allign-items-center"><a href="{% url 'home' %}" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item d-flex allign-items-center">
+                            <a  class="btn btn-primary" href="{% static 'pdf/CV.pdf' %}" target="_blank" >Donwload CV</a>
+                        </li>
                     </ul>
                 </div>
 
