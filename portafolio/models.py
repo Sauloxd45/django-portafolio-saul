@@ -8,6 +8,7 @@ class Project(models.Model):
     description = models.TextField(verbose_name="Descripción")
     image = ImageField(verbose_name="Imagen",upload_to="portafolio/images/")
     link = models.URLField(null=True, blank=True, verbose_name="Dirección web")
+    type = models.CharField(max_length=100, default="web", verbose_name="Tipo")
     created = models.DateTimeField(
         auto_now_add=True, verbose_name="Fecha de creación")
     updated = models.DateTimeField(
@@ -21,3 +22,10 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 # Create your models here.......
+
+def get_embed_url(self):
+        """Convierte una URL de YouTube en su formato de inserción"""
+        if "youtube.com" in self.link or "youtu.be" in self.link:
+            video_id = self.link.split("v=")[-1] if "v=" in self.link else self.link.split("/")[-1]
+            return f"https://www.youtube.com/embed/{video_id}"
+        return self.link

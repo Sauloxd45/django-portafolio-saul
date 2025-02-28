@@ -318,7 +318,7 @@
 
                     {%  for project in projects %}
 
-                    <div class="portafolio__content mix web">
+                    <div class="portafolio__content mix {{project.type}}">
                         <a href="{% url 'blog:posts' %}"> <img src="{{project.image.url}}" alt="" class="portafolio__img"></a>
                         <div class="portafolio__data">
                             <span class="portafolio__subtitle">{{project.title}}</span>
