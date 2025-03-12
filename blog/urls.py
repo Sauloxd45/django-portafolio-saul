@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 
 
 
+
 app_name = 'blog'
 
 urlpatterns = [
