@@ -1,6 +1,8 @@
 {% extends "layout_posts.html" %}
 {% load embed_video_tags %}
+
 {% block content %}
+@xframe_options_sameorigin
 
 <div class="text-center p-4">
 
@@ -45,10 +47,18 @@
     {% post.url 'small' %}
     
 </div> {% endcomment %}
+
+{% if post.archivo %}
 <div class="p-3">
-    <iframe src="{{ post.archivo }}" width="100%" height="600px"></iframe>
+    <iframe src="{{ post.archivo.url }}" width="100%" height="600px" style= "border:none;" allow="fullscreen"></iframe>
+
+
 
 </div>
+
+{% else %}
+    <p>No hay archivo disponible.</p>
+{% endif %}
 
 <div class="my-4">
     <a href="{% url 'blog:posts' %}" class="btn btn-light">Back to posts</a>

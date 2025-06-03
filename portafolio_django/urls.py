@@ -24,6 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name='home'),
     path('blog/',include('blog.urls')),
+     # Ruta para servir PDFs con X-Frame-Options SAMEORIGIN
+    # path('media/<str:filename>/', views.serve_pdf, name='serve_pdf'),
+
 ]
 
 if settings.DEBUG:
